@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:gap="16dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="一次性Base64密钥"
+        android:textSize="16sp"/>
+
+    <EditText
+        android:id="@+id/et_key"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="粘贴电脑输出的密钥"/>
+
+    <Button
+        android:id="@+id/btn_select"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="选择 picture.enc 文件"/>
+
+    <TextView
+        android:id="@+id/tv_file"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="未选择文件"/>
+
+    <Button
+        android:id="@+id/btn_decrypt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="开始解密"
+        android:backgroundTint="#2185d0"/>
+
+</LinearLayout>
