@@ -1,7 +1,5 @@
 name: Build Decrypt APK
-on:
-  push:
-    branches: [ main ]
+on: push
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -12,11 +10,14 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
-      - name: Grant execute permission for gradlew
-        run: chmod +x gradlew
-      - name: Build Debug APK
+      # 赋予gradlew执行权限
+      - name: Add execute permission
+        run: chmod +x ./gradlew
+      # 编译Debug包
+      - name: Build APK
         run: ./gradlew assembleDebug
-      - name: Upload APK Artifact
+      # 导出安装包
+      - name: Save APK
         uses: actions/upload-artifact@v4
         with:
           name: ImageDecrypt-APK
