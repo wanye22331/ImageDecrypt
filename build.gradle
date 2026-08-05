@@ -1,4 +1,12 @@
-plugins {
-    id 'com.android.application' version '8.2.0' apply false
-    id 'org.jetbrains.kotlin.android' version '1.9.0' apply false
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        // AGP 8.7 适配 Gradle 8.11
+        classpath "com.android.tools.build:gradle:8.7.0"
+        // Kotlin 1.9.20 完美兼容 AGP8 + Gradle8
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.20"
+    }
 }
