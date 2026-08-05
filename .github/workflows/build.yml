@@ -4,20 +4,22 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
+
       - name: Setup JDK 17
         uses: actions/setup-java@v4
         with:
           java-version: '17'
           distribution: 'temurin'
-      # 赋予gradlew执行权限
-      - name: Add execute permission
+
+      - name: Grant execute permission to gradlew
         run: chmod +x ./gradlew
-      # 编译Debug包
-      - name: Build APK
+
+      - name: Build Debug APK
         run: ./gradlew assembleDebug
-      # 导出安装包
-      - name: Save APK
+
+      - name: Upload APK artifact
         uses: actions/upload-artifact@v4
         with:
           name: ImageDecrypt-APK
